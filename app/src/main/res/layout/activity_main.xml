@@ -7,7 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
+    <me.ibrahimsn.lib.SmoothBottomBar
+        android:id="@+id/bottomBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50sdp"
+        app:backgroundColor="@color/teal_200"
+        app:badgeColor="@color/colorBadge"
+        app:menu="@menu/bottom_nav"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

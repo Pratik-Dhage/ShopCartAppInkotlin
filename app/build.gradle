@@ -1,6 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+   // id("androidx.navigation.safeargs") // for java or Java+kotlin mix code in project
+      id("androidx.navigation.safeargs.kotlin") //specifically if you use kotlin in whole project
+   id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
 }
 
 apply plugin: 'kotlin-kapt'
@@ -60,8 +64,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.7.0'
 
     //Navigation graph
-    def nav_version_ktx = "2.4.0-alpha03"    //noinspection GradleDependency
-    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version_ktx"    //noinspection GradleDependency
+    def nav_version_ktx = "2.5.3"
+    //noinspection GradleDependency
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version_ktx"
+    //noinspection GradleDependency
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version_ktx"
 
     //Room
@@ -93,5 +99,22 @@ dependencies {
 //smooth bottom bar
     implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
 
+    //Firebase Bom dependency
+    implementation platform('com.google.firebase:firebase-bom:29.3.1')
+    //Firebase Authentication dependency
+    implementation 'com.google.firebase:firebase-auth'
+    //Firebase Database Dependency
+    implementation 'com.google.firebase:firebase-database:20.1.0'
+    implementation 'com.google.firebase:firebase-storage:20.1.0'
+    //firebase analytics
+    implementation 'com.google.firebase:firebase-analytics'
+    // for Firebase FireStore Database
+    implementation 'com.google.firebase:firebase-firestore'
+    //firebase crashlytics
+    implementation 'com.google.firebase:firebase-crashlytics'
 
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.14.2'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
 }

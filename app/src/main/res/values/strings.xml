@@ -8,4 +8,10 @@
     <string name="profile">Profile</string>
     <string name="more">More</string>
     <string name="shopcart">ShopCart</string>
+    <string name="shop_by_category">Shop By Category</string>
+    <string name="see_all">See All</string>
+    <string name="shop_by_product">Shop By Product</string>
+    <string name="mrp">MRP</string>
+    <string name="sp">SP</string>
+    <string name="add_to_cart">Add To Cart</string>
 </resources>

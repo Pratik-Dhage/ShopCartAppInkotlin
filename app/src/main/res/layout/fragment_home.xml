@@ -1,18 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.HomeFragment">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_24sdp"
+        tools:context=".fragments.HomeFragment">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/homeCardView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            app:cardCornerRadius="@dimen/_10sdp"
+            app:cardElevation="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivCardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:background="@drawable/home_icon" />
 
 
+        </com.google.android.material.card.MaterialCardView>
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:text="@string/home"
-    />
+        <!--Category-->
+        <TextView
+            android:id="@+id/LabelShopByCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shop_by_category"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/bottom_nav_bg"
+            app:layout_constraintStart_toStartOf="@id/homeCardView"
+            app:layout_constraintTop_toBottomOf="@id/homeCardView" />
 
-</FrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvHomeCategory"
+            tools:listitem="@layout/item_home_category"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintEnd_toEndOf="@id/homeCardView"
+            app:layout_constraintStart_toStartOf="@id/LabelShopByCategory"
+            app:layout_constraintTop_toBottomOf="@id/LabelShopByCategory"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/LabelSeeAllCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/see_all"
+            android:textSize="@dimen/_13ssp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/homeCardView"
+            app:layout_constraintTop_toBottomOf="@id/homeCardView" />
+
+         <!--Product-->
+        <TextView
+            android:id="@+id/LabelShopByProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/shop_by_product"
+            android:textSize="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:textStyle="bold"
+            android:textColor="@color/bottom_nav_bg"
+            app:layout_constraintStart_toStartOf="@id/homeCardView"
+            app:layout_constraintTop_toBottomOf="@id/rvHomeCategory" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvHomeProduct"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintStart_toStartOf="@id/LabelShopByCategory"
+            app:layout_constraintTop_toBottomOf="@id/LabelShopByProduct"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/_10sdp"
+            tools:listitem="@layout/item_home_product"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_height="0dp"/>
+
+        <TextView
+            android:id="@+id/LabelSeeAllProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/see_all"
+            android:textSize="@dimen/_13ssp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@id/homeCardView"
+            app:layout_constraintTop_toBottomOf="@id/rvHomeCategory" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

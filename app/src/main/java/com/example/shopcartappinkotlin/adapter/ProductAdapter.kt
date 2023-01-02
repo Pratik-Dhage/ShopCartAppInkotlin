@@ -1,6 +1,7 @@
 package com.example.shopcartappinkotlin.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.shopcartappinkotlin.R
+import com.example.shopcartappinkotlin.activity.ProductDetailActivity
 import com.example.shopcartappinkotlin.databinding.ItemHomeProductBinding
 import com.example.shopcartappinkotlin.model.AddProductModel
 
@@ -32,6 +34,13 @@ class ProductAdapter(val context : Context, val list: ArrayList<AddProductModel>
         holder.binding.txtProductMRP.text = a.productMrp
         holder.binding.txtProductSP.text = a.productSp
         Glide.with(context).load(a.productCoverImg).into(holder.binding.ivProductList)
+
+        holder.itemView.setOnClickListener {
+            val i = Intent(context, ProductDetailActivity::class.java)
+            i.putExtra("productId",a.productId)
+            context.startActivity(i)
+        }
+
 
     }
 

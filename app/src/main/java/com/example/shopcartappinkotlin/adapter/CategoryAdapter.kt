@@ -1,6 +1,7 @@
 package com.example.shopcartappinkotlin.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.shopcartappinkotlin.R
+import com.example.shopcartappinkotlin.activity.CategoryDetailActivity
 import com.example.shopcartappinkotlin.databinding.ItemHomeCategoryBinding
 import com.example.shopcartappinkotlin.model.CategoryModel
 
@@ -29,6 +31,12 @@ class CategoryAdapter(val context : Context, val list : ArrayList<CategoryModel>
 
         holder.binding.txtCategoryName.text = a.catName
         Glide.with(context).load(a.catImage).into(holder.binding.ivItemCategory)
+
+        holder.itemView.setOnClickListener {
+            val i = Intent(context,CategoryDetailActivity::class.java)
+            i.putExtra("catName", a.catName)
+            context.startActivity(i)
+        }
 
     }
 

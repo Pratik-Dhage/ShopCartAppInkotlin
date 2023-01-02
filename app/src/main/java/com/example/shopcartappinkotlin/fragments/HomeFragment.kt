@@ -30,8 +30,13 @@ class HomeFragment : Fragment() {
        getHomeCategory()
         getHomeSlider()
         getHomeProduct()
+        //onClickListener()
         return binding.root
     }
+
+   /* private fun onClickListener() {
+        TODO("Not yet implemented")
+    }*/
 
     private fun getHomeProduct() {
 
@@ -48,8 +53,6 @@ class HomeFragment : Fragment() {
 
             binding.rvHomeProduct.adapter = ProductAdapter(requireContext(),list)
         }
-
-
 
     }
 

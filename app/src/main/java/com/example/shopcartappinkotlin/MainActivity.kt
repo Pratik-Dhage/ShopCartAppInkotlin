@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityMainBinding
     private lateinit var view : View
+    private var i = 0 // for fragment changes and onBackPressed()
 
 
 
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
         initializeFields()
         fragmentSetUp()
-        onClickListeners()
+       // onClickListeners()
     }
 
     private fun fragmentSetUp() {
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         popupMenu.inflate(R.menu.bottom_nav)
         binding.bottomNavBar.setupWithNavController(popupMenu.menu,navController)
 
+        //for changing Title AFTER changing fragments
         navController.addOnDestinationChangedListener(object : NavController.OnDestinationChangedListener{
             override fun onDestinationChanged(
                 controller: NavController,
@@ -49,10 +51,28 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+
+        //for changing fragments
+        binding.bottomNavBar.onItemSelected = {
+
+            when(it){
+                0 -> { i = 0
+                    navController.navigate(R.id.homeFragment)}
+
+                1 -> { i = 1 }
+                   // navController.navigate(R.id.cartFragment)}
+
+                2 -> { i = 2 }
+                   // navController.navigate(R.id.moreFragment)}
+            }
+        }
     }
 
-    private fun onClickListeners() {
-       // TODO("Not yet implemented")
+    override fun onBackPressed() {
+        super.onBackPressed()
+        if(i==0){
+            finish()
+        }
     }
 
     private fun initializeFields() {

@@ -25,7 +25,7 @@
                 app:iss_delay="0"
                 app:iss_error_image="@drawable/error"
                 app:iss_period="1000"
-                app:iss_placeholder="@drawable/profile_icon"
+                app:iss_placeholder="@drawable/loading"
                 tools:background="@color/purple_200" />
 
         </com.google.android.material.card.MaterialCardView>
@@ -71,6 +71,7 @@
             tools:text="Product Description" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/_10sdp"

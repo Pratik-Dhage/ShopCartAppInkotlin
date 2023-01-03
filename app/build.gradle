@@ -120,4 +120,7 @@ dependencies {
 
     //Image SlideShow
     implementation 'com.github.denzcoskun:ImageSlideshow:0.1.0'
+
+    //Coroutines Core
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 }

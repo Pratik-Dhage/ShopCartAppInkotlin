@@ -1,10 +1,12 @@
 package com.example.shopcartappinkotlin.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.shopcartappinkotlin.R
 import com.example.shopcartappinkotlin.adapter.CategoryAdapter
@@ -30,13 +32,18 @@ class HomeFragment : Fragment() {
        getHomeCategory()
         getHomeSlider()
         getHomeProduct()
+        goToCartFragment()
         //onClickListener()
         return binding.root
     }
 
-   /* private fun onClickListener() {
-        TODO("Not yet implemented")
-    }*/
+    private fun goToCartFragment() {
+
+        val preference = requireContext().getSharedPreferences("info", Context.MODE_PRIVATE)
+        if(preference.getBoolean("isAddedInCart",false)){
+            findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
+        }
+    }
 
     private fun getHomeProduct() {
 

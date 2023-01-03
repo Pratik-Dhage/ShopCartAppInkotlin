@@ -1,5 +1,7 @@
 package com.example.shopcartappinkotlin.fragments
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,9 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.example.shopcartappinkotlin.R
+import com.example.shopcartappinkotlin.activity.AddressActivity
 import com.example.shopcartappinkotlin.adapter.CartAdapter
 import com.example.shopcartappinkotlin.databinding.FragmentCartBinding
 import com.example.shopcartappinkotlin.roomDB.ProductDB
+import com.example.shopcartappinkotlin.roomDB.ProductModel
 
 
 class CartFragment : Fragment() {
@@ -34,6 +38,25 @@ class CartFragment : Fragment() {
         dao.getAllProducts().observe(requireActivity()){
             //set data in Cart RecyclerView
             binding.rvCartFragment.adapter = CartAdapter(requireContext(),it)
+
+            totalCost(it) //to calculate total items and payment in Cart
+        }
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun totalCost(list: List<ProductModel>) {
+        var total = 0
+        for(item in list){
+            total += item.productSp.toInt()
+        }
+
+        binding.txtCartItems.text = resources.getString(R.string.total_items_in_cart)+" ${list.size}"
+        binding.txtCartTotal.text = resources.getString(R.string.total_payment)+total.toString()
+
+        binding.btnCheckout.setOnClickListener {
+            val i = Intent(requireContext(), AddressActivity::class.java)
+            i.putExtra("totalCost",total.toString())
+            startActivity(i)
         }
     }
 

@@ -17,4 +17,7 @@
     <string name="go_to_cart">Go To Cart</string>
     <string name="add_to_cart_product_detail">Add To Cart</string>
     <string name="checkout">CheckOut</string>
+    <string name="total_items_in_cart">Total items in Cart:</string>
+    <string name="total_payment">Total Payment: Rs</string>
+
 </resources>

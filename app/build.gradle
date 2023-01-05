@@ -102,7 +102,7 @@ dependencies {
     //Firebase Bom dependency
     implementation platform('com.google.firebase:firebase-bom:29.3.1')
     //Firebase Authentication dependency
-    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-auth-ktx'
     //Firebase Database Dependency
     implementation 'com.google.firebase:firebase-database:20.1.0'
     implementation 'com.google.firebase:firebase-storage:20.1.0'

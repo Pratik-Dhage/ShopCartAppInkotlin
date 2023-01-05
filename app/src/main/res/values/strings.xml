@@ -19,5 +19,33 @@
     <string name="checkout">CheckOut</string>
     <string name="total_items_in_cart">Total items in Cart:</string>
     <string name="total_payment">Total Payment: Rs</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="don_t_have_account">Don\'t have an account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="register">Register</string>
+    <string name="already_have_an_account">Already have an Account?</string>
+    <string name="full_name">Full name</string>
+    <string name="address">Address</string>
+    <string name="mobile">Mobile</string>
+    <string name="email_cannot_be_empty">Email cannot be empty</string>
+    <string name="enter_valid_email">Enter valid email</string>
+    <string name="password_cannot_be_empty">Password cannot be empty</string>
+    <string name="address_cannot_be_empty">Address cannot be empty</string>
+    <string name="mobile_number_cannot_be_empty">Mobile number cannot be empty</string>
+    <string name="full_name_cannot_be_empty">Full name cannot be empty</string>
+    <string name="kindly_fill_up_all_fields">Kindly fill all fields</string>
+    <string name="check_internet">Check Internet Connection</string>
+    <string name="user_registered_successfully">User Registered Successfully</string>
+    <string name="login_successful">Login Successful</string>
+    <string name="user_not_found">User Not Found</string>
+    <string name="otp">OTP</string>
+    <string name="verify">Verify</string>
+    <string name="please_provide_otp">Please provide otp</string>
+    <string name="kindly_mention_complete_address">Pls Mention Complete Address</string>
+    <string name="proceed_to_checkout">Proceed To Checkout</string>
+
 
 </resources>

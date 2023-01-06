@@ -93,6 +93,8 @@ class RegisterActivity : AppCompatActivity() {
                 Global.saveStringInSharedPref(this,"fullName",fullName)
                 Global.saveStringInSharedPref(this,"mobileNumber",mobileNumber)
                 Global.saveStringInSharedPref(this,"address",address)
+                Global.saveStringInSharedPref(this,"email",email)
+                Global.saveStringInSharedPref(this,"password",password)
 
 
                 Global.showToast(this,resources.getString(R.string.user_registered_successfully))

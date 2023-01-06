@@ -44,8 +44,10 @@
     <string name="otp">OTP</string>
     <string name="verify">Verify</string>
     <string name="please_provide_otp">Please provide otp</string>
-    <string name="kindly_mention_complete_address">Pls Mention Complete Address</string>
+    <string name="please_mention_complete_address">Mention Full Address</string>
     <string name="proceed_to_checkout">Proceed To Checkout</string>
+    <string name="update_profile">Update Profile</string>
+    <string name="profile_updated_successfully">Profile updated successfully</string>
 
 
 </resources>

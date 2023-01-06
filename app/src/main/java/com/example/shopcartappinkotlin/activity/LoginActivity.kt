@@ -98,6 +98,8 @@ class LoginActivity : AppCompatActivity() {
             i.putExtra("verificationId",verificationId)
             i.putExtra("mobileNumber",mobileNumber)
             startActivity(i)
+
+            Global.saveStringInSharedPref(this@LoginActivity,"mobileNumber",mobileNumber)
         }
     }
 

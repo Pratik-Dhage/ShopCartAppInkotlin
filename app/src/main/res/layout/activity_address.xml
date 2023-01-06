@@ -25,7 +25,7 @@
 
     <TextView
         android:id="@+id/labelFullName"
-        tools:text="@string/full_name"
+        android:text="@string/full_name"
         android:textSize="@dimen/_15ssp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/labelAddress"
@@ -45,13 +45,14 @@
     android:textStyle="italic"
     android:layout_marginTop="@dimen/_25sdp"
     android:layout_marginStart="@dimen/_10sdp"
+    app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toBottomOf="@id/labelAddress"
     app:layout_constraintStart_toEndOf="@id/labelFullName"
     android:layout_height="wrap_content"/>
 
     <TextView
         android:id="@+id/labelMobile"
-        tools:text="@string/mobile"
+        android:text="@string/mobile"
         android:textSize="@dimen/_15ssp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/labelFullName"
@@ -75,8 +76,8 @@
         android:layout_height="wrap_content"/>
 
     <TextView
-        android:id="@+id/labelAddress_"
-        tools:text="@string/address"
+        android:id="@+id/labelEmail"
+        android:text="@string/email"
         android:textSize="@dimen/_15ssp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@id/labelMobile"
@@ -86,17 +87,72 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+
+    <TextView
+        android:id="@+id/txtEmail"
+        tools:text="p@gmail.com"
+        android:textSize="@dimen/_15ssp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:textStyle="italic"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/txtMobile"
+        app:layout_constraintStart_toStartOf="@id/txtFullName"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/labelPassword"
+        android:text="@string/password"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/labelEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/bottom_nav_bg"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:id="@+id/txtPassword"
+        tools:text="123456"
+        android:textSize="@dimen/_15ssp"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:textStyle="italic"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@id/txtEmail"
+        app:layout_constraintStart_toStartOf="@id/txtFullName"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:id="@+id/labelAddress_"
+        android:text="@string/address"
+        android:textSize="@dimen/_15ssp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/labelPassword"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/bottom_nav_bg"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
     <TextView
         android:id="@+id/labelKindly"
-        android:text="@string/kindly_mention_complete_address"
+        android:text="@string/please_mention_complete_address"
         android:textSize="@dimen/_15ssp"
         android:textStyle="italic"
-        app:layout_constraintTop_toBottomOf="@id/labelMobile"
-        app:layout_constraintStart_toStartOf="@id/txtMobile"
+        app:layout_constraintTop_toBottomOf="@id/labelPassword"
+        app:layout_constraintStart_toStartOf="@id/txtPassword"
         android:textColor="@color/red"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+
+
+
 
     <EditText
         android:id="@+id/edtAddress"
@@ -125,6 +181,19 @@
     android:textSize="@dimen/_15ssp"
     app:layout_constraintTop_toBottomOf="@id/edtAddress"
     android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnUpdateProfile"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:text="@string/update_profile"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_15ssp"
+        app:layout_constraintTop_toBottomOf="@id/btnProceed"
+        android:layout_height="wrap_content"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

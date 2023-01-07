@@ -60,22 +60,7 @@ private lateinit var view : View
         updateData ["email"] = email
         updateData ["password"] = password
 
-        binding.btnUpdateProfile.setOnClickListener{
 
-            //update address
-            Firebase.firestore.collection("users")
-                .document(mobileNumber).set(updateData).addOnSuccessListener {
-
-                    //also store updated data in Shared Preference
-                    Global.saveStringInSharedPref(this,"address",address)
-
-                    Global.showSnackBar(view,resources.getString(R.string.profile_updated_successfully))
-
-                }.addOnFailureListener {
-                    Global.showSnackBar(view,it.localizedMessage!!)
-                }
-
-        }
 
        binding.btnProceed.setOnClickListener {
 
@@ -83,8 +68,10 @@ private lateinit var view : View
                binding.edtAddress.error = resources.getString(R.string.address_cannot_be_empty)
            }
             else{
-            // val address = binding.edtAddress.text.toString().trim()
-               startActivity(Intent(this,CheckOutActivity::class.java))
+
+                val i = Intent(this,CheckOutActivity::class.java)
+                i.putExtra("productIdsList",intent.getStringArrayExtra("productIdsList"))
+                startActivity(i)
             }
        }
     }

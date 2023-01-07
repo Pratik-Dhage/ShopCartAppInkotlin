@@ -123,4 +123,7 @@ dependencies {
 
     //Coroutines Core
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+
+    //RazorPay
+    implementation 'com.razorpay:checkout:1.6.26'
 }
